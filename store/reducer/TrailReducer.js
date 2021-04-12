@@ -1,4 +1,4 @@
-import { trailmodel } from "../../model/trailModel";
+import { trailmodel } from "../../screens/model/trailModel";
 
 const initialestate = {
     trails: [trailmodel]
@@ -7,11 +7,18 @@ const initialestate = {
 function trailreducer(state=initialestate, action) {
     let nextState;
     switch (action.type) {
-        case "ADD_TRAIL": 
+        case "ADD_TRAIL":
+
             nextState = {
                 ...state, 
                 trails: [...state.trails, action.value]
             }
+            console.log('Next State', nextState); 
+            return nextState;
+        case "EDIT_TRAIL": 
+            const id = action.value.id;
+            nextState = {...state};
+            nextState[id] = action.value;
             return nextState;
         default:
             return state

@@ -1,18 +1,17 @@
-import React, { Component } from 'react'
-import { View, Text, Button, StyleSheet } from 'react-native'
-import { trailmodel } from '../model/trailModel'
+import React, { Component } from 'react';
+import { View, Text, Button, StyleSheet } from 'react-native';
+import { trailmodel } from './model/trailModel';
+import { connect } from "react-redux";
 
-export default class TrailDisplay extends Component {
+class TrailDisplay extends Component {
  
-constructor(props) {
-    super(props)
-    
-}
-    
+    constructor(props) {
+        super(props);
+    }
+
     render() {
-        const trail = trailmodel
-        const {navigate} = this.props.navigation
-        console.log(this.props);
+        const { navigate } = this.props.navigation;
+        const trail = trailmodel;
 
         return (
             <View>
@@ -21,7 +20,11 @@ constructor(props) {
                 <Text>Difficulté : {trail.difficulty}</Text>
                 <Text>Nombre d'étapes : {trail.numberOfSteps}</Text>
                 <Text>Description : {trail.description}</Text>
-                <Button onPress = { ()=> this.props.navigation.navigate ('trailaddition')}title= 'Editer'/>   
+                <Button
+                    onPress={() => navigate('trailEdition', { trail: trail })}
+                    title="Edit"
+                />
+                <Text onPress={() => navigate('trailaddition')}>Go to Validation</Text>  
             </View>
         )
     }
@@ -35,3 +38,10 @@ const styles = StyleSheet.create({
         paddingVertical: 14,
     }
 });
+
+const mapStateToProps = state => { 
+    return state;
+};
+    
+export default connect(mapStateToProps) (TrailDisplay);
+
