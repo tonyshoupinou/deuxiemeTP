@@ -1,27 +1,32 @@
-import React, { Component } from 'react'
-import { View, Text } from 'react-native'
-import { trailmodel } from '../model/trailModel'
+import React from 'react'
+import { View, Text, Button } from 'react-native'
 import { connect } from "react-redux";
-import TrailDisplay from './trailDisplay';
 
-class TrailList extends Component {
+class TrailList extends React.Component {
  
     constructor(props) {
         super(props);
-        this.state = {}
     }
-        
+
     render() {
-        const {trails} = this.props
-        // console.log(this.props);
-        return (
-           <View>
-               <TrailDisplay/>
-           </View>
+        const { navigate } = this.props.navigation;
+        console.log(this.props)
+
+        return(
+            <View>
+                <Button
+                    onPress={() => navigate('traildisplay')}
+                    title="go to display"
+                />
+            </View>
         )
     }
+        
+
 }
-const mapStateToProps = state=>
-    {return state}
+
+const mapStateToProps = state => { 
+    return state;
+};
     
-export default connect(mapStateToProps)(TrailList)
+export default connect(mapStateToProps) (TrailList);

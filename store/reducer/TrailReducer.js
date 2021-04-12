@@ -13,6 +13,11 @@ function trailreducer(state=initialestate, action) {
                 trails: [...state.trails, action.value]
             }
             return nextState;
+        case "EDIT_TRAIL": 
+            const id = action.value.id;
+            nextState = {...state};
+            nextState[id] = action.value;
+            return nextState;
         default:
             return state
     }
