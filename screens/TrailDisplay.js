@@ -22,6 +22,7 @@ class TrailDisplay extends Component {
                     onPress={() => navigate('trailEdition', { trail: trail })}
                     title="Edit"
                 />
+                <Text onPress={() => navigate('trailaddition')}>Go to Validation</Text>
             </View>
         )
     }
