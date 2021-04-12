@@ -18,7 +18,7 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="traillist" component={TrailList} />
-          <Stack.Screen name="traildisplay" component={TrailDisplay} />
+          {/* <Stack.Screen name="traildisplay" component={TrailDisplay} /> */}
           <Stack.Screen name="trailaddition" component={TrailAddition} />
           <Stack.Screen name="trailEdition" component={TrailEdition} />
         </Stack.Navigator>

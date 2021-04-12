@@ -5,3 +5,10 @@ export const trailmodel = {
     numberOfSteps: 5,
     description: ''
 }
+export const trailmodel2 = {
+    id: 2,
+    name: 'Parcours 2',
+    difficulty: 'Facile',
+    numberOfSteps: 7,
+    description: ''
+}
