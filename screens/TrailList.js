@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Button } from 'react-native'
 import { trailmodel } from './model/trailModel'
 import { connect } from "react-redux";
 import TrailDisplay from './TrailDisplay';
 
-export default class TrailList extends Component {
+class TrailList extends Component {
  
     constructor(props) {
         super(props);

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
-import { trailmodel } from '../model/trailModel';
+import { trailmodel } from './model/trailModel';
 import { connect } from "react-redux";
 
 class TrailDisplay extends Component {
