@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, TextInput, StyleSheet, Picker } from 'react-native';
 import { connect } from "react-redux";
-// import { isNum } from '../core/utils';
 
 class TrailEdition extends Component {
     constructor(props) {
@@ -9,37 +8,27 @@ class TrailEdition extends Component {
 
         this.state = {
             id: this.props.route.params.trail.id,
-            name: 'Parcours 1',
-            difficulty: 'Très Facile',
-            numberOfSteps: 5,
-            description: ''
+            name: this.props.route.params.trail.name,
+            difficulty: this.props.route.params.trail.difficulty,
+            numberOfSteps: this.props.route.params.trail.numberOfSteps,
+            description: this.props.route.params.trail.description
         }
     }
 
     render() {    
-        // let error ="";
-
         const { trail } = this.props.route.params;
         const { navigate } = this.props.navigation;
 
         const editTrail = (arg) => {
-            // const newTrail = arg;
-            // let isNumSteps = isNum(arg.numberOfSteps);
-            
-            // if (isNumSteps) {
-            //     error = "Doit être un nombre."
-            // }
             const action = { type: 'EDIT_TRAIL', value: { 
                 id: this.state.id,
-                name: this.state.name, 
-                difficulty: this.state.difficulty, 
-                numberOfSteps: this.state.numberOfSteps, 
-                description: this.state.description
+                name: arg.name, 
+                difficulty: arg.difficulty, 
+                numberOfSteps: arg.numberOfSteps, 
+                description: arg.description
             }};
             this.props.dispatch(action);
             navigate('traillist');
-
-
         }
          
         return (

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, Button } from 'react-native'
-import { trailmodel } from './model/trailModel'
+import { View, Text, Button, FlatList } from 'react-native'
 import { connect } from "react-redux";
 import TrailDisplay from './TrailDisplay';
 
@@ -11,21 +10,26 @@ class TrailList extends Component {
     }
 
     render() {
-        const {navigate} = this.props.navigation
-        const {trails} = this.props
-        // console.log(this.props);
+        const {navigate} = this.props.navigation;
+        const {trails} = this.props;
+
         return (
            <View>
-               <Text onPress={() => navigate('traildisplay')}>test</Text>
+               <FlatList
+                    data={trails}
+                    renderItem={({ item }) => (
+                        <TrailDisplay trail={item} navigate={navigate} />
+                    )}
+                    keyExtractor={(item) => item.id.toString()}
+                />
+
                <Button
-                    onPress={() => navigate('traildisplay')}
-                    title="go to display"
+                    onPress={() => navigate('trailaddition')}
+                    title="Add a trail"
                 />
            </View>
         )
     }
-        
-
 }
 
 const mapStateToProps = state => { 
