@@ -3,9 +3,9 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import TrailDisplay from './screens/trailDisplay';
-import TrailAddition from './screens/trailAddition';
-import TrailList from './screens/trailList';
+import TrailDisplay from './screens/TrailDisplay';
+import TrailAddition from './screens/TrailAddition';
+import TrailList from './screens/TrailList'
 import { Provider } from 'react-redux';
 import trailstore from './store/configstore';
 
@@ -16,9 +16,9 @@ export default function App() {
     <Provider store={trailstore}>
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen name="trailaddition" component={TrailAddition}></Stack.Screen>
           <Stack.Screen name="traillist" component={TrailList}></Stack.Screen>
           <Stack.Screen name="traildisplay" component={TrailDisplay}></Stack.Screen>
-          <Stack.Screen name="trailaddition" component={TrailAddition}></Stack.Screen>
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { View, Text } from 'react-native'
-import { trailmodel } from '../model/trailModel'
+import { trailmodel } from './model/trailModel'
 import { connect } from "react-redux";
-import TrailDisplay from './trailDisplay';
+import TrailDisplay from './TrailDisplay';
 
-class TrailList extends Component {
+export default class TrailList extends Component {
  
     constructor(props) {
         super(props);
@@ -12,11 +12,12 @@ class TrailList extends Component {
     }
         
     render() {
+        const {navigate} = this.props.navigation
         const {trails} = this.props
         // console.log(this.props);
         return (
            <View>
-               <TrailDisplay/>
+               <Text onPress={() => navigate('traildisplay')}>test</Text>
            </View>
         )
     }
@@ -24,4 +25,4 @@ class TrailList extends Component {
 const mapStateToProps = state=>
     {return state}
     
-export default connect(mapStateToProps)(TrailList)
+// export default connect(mapStateToProps)(TrailList)
