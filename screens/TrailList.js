@@ -16,7 +16,7 @@ class TrailList extends Component {
         // console.log(this.props);
         return (
            <View>
-               <TrailDisplay/>
+            
            </View>
         )
     }
