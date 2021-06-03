@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { View } from 'react-native'
-import AddTrail from './utils/addTrail'
 
 export default class TrailAddition extends Component {
 
@@ -12,7 +11,6 @@ export default class TrailAddition extends Component {
     render() {
         return (
             <View>
-                <AddTrail></AddTrail>
             </View>
         )
     }

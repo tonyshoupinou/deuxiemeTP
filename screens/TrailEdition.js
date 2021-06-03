@@ -105,7 +105,9 @@ const styles = StyleSheet.create({
         marginTop: 10,
         padding: 10,
         borderRadius: 5,
-        border: '1px solid blue'
+        borderStyle: 'solid',
+        borderWidth: 1,
+        borderColor: 'blue'
     },
     saveBtn: {
         backgroundColor: 'blue',
